@@ -4,4 +4,4 @@
 
 ![image](https://github.com/andyysea/UINavigationBarClearColor/blob/master/DynamicGraph.gif)
 
-bbbbb
+

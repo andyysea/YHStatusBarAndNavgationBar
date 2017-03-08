@@ -1,0 +1,9 @@
+
+1> 状态栏前景颜色改变, 以及部分问题说明
+    查看 AppDelegate.m 中的说明, 根据说明再查看
+
+2> 每次 push 压栈的时候不需要再设置 hidesBottomBarWhenPushed = YES
+    实现方法,查看 YHNavgationController.m 中的解决方法和说明
+
+3> 滚动的时候,隐藏导航栏和底部工具栏并且带有动画效果,解决办法以及实际应用中的部分分析说明
+    实现方法查看看文件夹 One中的  OtherViewController.m
