@@ -46,14 +46,18 @@ static NSString *cellId = @"cellId";
 //    重新设置导航栏背景为透明,重新添加导航栏和状态栏的背景视图
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    [self.navigationController.navigationBar addSubview:self.statusBgView];
-    [self.navigationController.navigationBar insertSubview:self.navBgView atIndex:0];
-
+//    [self.navigationController.navigationBar addSubview:self.statusBgView];
+//    [self.navigationController.navigationBar insertSubview:self.navBgView atIndex:0];
+    NSLog(@"viewWillAppear--> %zd",self.navigationController.navigationBar.subviews.count);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    NSLog(@"viewDidAppear");
+    // 插入背景视图写在这里,解决拖拽返回时,导航栏视图会添加在最上面的问题,
+    // (***明明插在最底层却在最上面,而且只有拖拽返回的时候在最上面,具体原因暂时不详***)
+    [self.navigationController.navigationBar addSubview:self.statusBgView];
+    [self.navigationController.navigationBar insertSubview:self.navBgView atIndex:0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -63,12 +67,12 @@ static NSString *cellId = @"cellId";
     [self.navigationController.navigationBar setShadowImage:nil];
     [self.statusBgView removeFromSuperview];
     [self.navBgView removeFromSuperview];
-
+    NSLog(@"viewWillDisappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-
+    NSLog(@"viewDidDisappear");
 }
 
 
