@@ -47,7 +47,7 @@ static NSString *cellId = @"cellId";
 }
 - (void)viewDidAppear:(BOOL)animated {
     // 这里重新设置的原因 --> 解决拖拽返回时，导航栏颜色没有变透明
-    //    [self.navigationController.navigationBar yh_setNavBarTintColor:[UIColor clearColor]];
+        [self.navigationController.navigationBar yh_setNavBarTintColor:[UIColor clearColor]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

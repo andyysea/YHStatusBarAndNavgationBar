@@ -14,9 +14,9 @@ static NSString *cellId = @"cellId";
 @interface TwoViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 /** 状态栏添加背景视图 */
-@property (nonatomic, weak) UIView *statusBgView;
+@property (nonatomic, strong) UIView *statusBgView;
 /** 导航栏添加背景视图 */
-@property (nonatomic, weak) UIView *navBgView;
+@property (nonatomic, strong) UIView *navBgView;
 
 /** 颜色设置 */
 @property (nonatomic, strong) UIColor *statusBgViewColor;
@@ -38,6 +38,39 @@ static NSString *cellId = @"cellId";
     // 先走的返回导航栏前景颜色方法, 然后才进此方法,所以要调用这句代码
     [self setNeedsStatusBarAppearanceUpdate];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+ 
+    
+//    重新设置导航栏背景为透明,重新添加导航栏和状态栏的背景视图
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self.navigationController.navigationBar addSubview:self.statusBgView];
+    [self.navigationController.navigationBar insertSubview:self.navBgView atIndex:0];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    // 恢复导航栏的背景颜色不为透明色,同时删除本控制器的背景视图,如果不删除,下一个控制器中,持有导航控制器的导航栏的属性,导航栏的属性又持有本控制器的背景视图,会印象 pop 出栈
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+    [self.statusBgView removeFromSuperview];
+    [self.navBgView removeFromSuperview];
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+
+}
+
 
 #pragma mark - 返回导航栏的前景颜色
 - (UIStatusBarStyle)preferredStatusBarStyle {

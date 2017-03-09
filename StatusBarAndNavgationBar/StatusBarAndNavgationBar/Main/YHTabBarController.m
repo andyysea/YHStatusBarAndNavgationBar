@@ -37,6 +37,7 @@
     YHNavgationController *twoNav = [[YHNavgationController alloc] initWithRootViewController:twoVC];
     
     ThreeViewController *threeVC = [ThreeViewController new];
+    threeVC.title = @"Three";
     YHNavgationController *threeNav = [[YHNavgationController alloc] initWithRootViewController:threeVC];
     
     self.viewControllers = @[oneNav,twoNav, threeNav];
