@@ -31,7 +31,6 @@
 
 #pragma mark - 设置界面元素
 - (void)setupUI {
-    self.title = @"hehhe";
     self.view.backgroundColor = [UIColor blueColor];
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];

@@ -1,7 +1,10 @@
-#UINavigationBar
+#statusBarAndNavBar
 
-随便写写 UINavigationBar
+<br>
 
-![image](https://github.com/andyysea/UINavigationBarClearColor/blob/master/DynamicGraph.gif)
+![image](https://github.com/andyysea/statusBarAndNavBar/blob/master/Gif/one.gif)
 
 
+
+
+<br/>
