@@ -2,9 +2,10 @@
 //  ThreeViewController.h
 //  StatusBarAndNavgationBar
 //
-//  Created by junde on 2017/3/9.
-//  Copyright © 2017年 junde. All rights reserved.
+//  Created by 杨应海 on 16/8/18.
+//  Copyright © 2016年 YYH. All rights reserved.
 //
+
 
 #import "YHBaseViewController.h"
 
