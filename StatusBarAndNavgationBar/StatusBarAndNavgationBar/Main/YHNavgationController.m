@@ -29,7 +29,7 @@
  */
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
    
-    //导航开始初始化的跟控制器不在数组之列,因为初始化的时候还没有push,所以没有压栈
+    //导航开始初始化的跟控制器不在数组之列,因为判断的时候还没有 super,没有导航栏初始化的跟控制器
     NSLog(@"---> %zd", self.viewControllers.count);
     if (self.viewControllers.count) { //避免一开始就隐藏了
         viewController.hidesBottomBarWhenPushed = YES;
