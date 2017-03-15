@@ -57,21 +57,23 @@ A) 如果某个控制器中需要使用系统的导航条,
     4>好处 根据OC的三大特性中的继承和多态, 只要在基类控制器中左侧添加一个返回箭头按钮,并且实现功能,中间添加一个label标签作为 Title ,在各个子类控制器中设置的导航条的背景颜色 和 Title 互不影响,,,,
 如果其他子类控制器需要其他样式的导航条,可以再在相应的子类控制器文件中添加即可,如果这种样式用的多可以重新写一个基类控制器,自定义对应样式的导航条
 
-    5> 特别说明
-[self.navigationController setNavigationBarHidden:YES animated:YES];
-self.navigationController.navigationBarHidden = YES;
-self.navigationController.navigationBar.hidden = YES;
-以上三种方法,当工程中存在UITabBarController的时候,只有第三种方式设置隐藏系统导航条支持拖拽返回手势,其他两种方法不支持
-
 二 不自定义导航条,直接使用系统导航条,导航条隐藏方法与左侧拖拽返回的关系
 [self.navigationController setNavigationBarHidden:NO animated:YES];
 self.navigationController.navigationBarHidden = NO;
 self.navigationController.navigationBar.hidden = NO;
-    1> 前两种方法隐藏导航条的时候, 只有 在当前控制器没有隐藏导航条,不管上一级控制器隐藏与否,都支持当前控制器的左侧拖拽返回.
-    2> 第三种方式不管上一级控制器或者还是当前控制器是否隐藏导航条,都支持左侧拖拽返回
-    3> 第一种和后两种的区别是, 如果上一级控制器隐藏了导航条,当前控制器没有隐藏导航条,左侧拖拽返回的时候,第一种方法不会产生刚一拖动导航条就向上消失的情况,
-    4> 以上三种方法在测试的时候,当当前系统导航栏没有隐藏的情况下,只要设置了self.navigationItem.leftBarButtonItem , 左侧拖拽返回功能就没有了
-    5> 特别说明,  当不定义导航条,使用系统的导航条的时候, 如果存在UITabBarController 也遵守以上四条
+1> 前两种方法隐藏导航条的时候, 只有 在当前控制器没有隐藏导航条,不管上一级控制器隐藏与否,都支持当前控制器的左侧拖拽返回.
+2> 第三种方式不管上一级控制器或者还是当前控制器是否隐藏导航条,都支持左侧拖拽返回
+3> 第一种和后两种的区别是, 如果上一级控制器隐藏了导航条,当前控制器没有隐藏导航条,左侧拖拽返回的时候,第一种方法不会产生刚一拖动导航条就向上消失的情况,
+4> 以上三种方法在测试的时候,当当前系统导航栏没有隐藏的情况下,只要设置了self.navigationItem.leftBarButtonItem , 左侧拖拽返回功能就没有了
+5> 特别说明,  当不定义导航条,使用系统的导航条的时候, 如果存在UITabBarController 也遵守以上四条
+
+三  总结
+[self.navigationController setNavigationBarHidden:NO/YES animated:YES];
+self.navigationController.navigationBarHidden = NO/YES;
+self.navigationController.navigationBar.hidden = NO/YES;
+1> 如果是全部使用自定义的导航条,系统的导航条都隐藏了,只有第三种方式支持拖拽返回手势
+2> 如果当前控制器的系统导航条没有隐藏,不管上一级控制器系统导航条隐藏与否,三种方法都支持拖拽返回
+3> 如果当前控制器导航条是系统的,上一级是隐藏的,第一种拖拽返回的时候不会出现导航条不会产生刚一拖动导航条就向上消失的情况,另外两种会产生这种情况
 
 
 
