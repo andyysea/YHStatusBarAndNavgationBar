@@ -12,9 +12,9 @@
 ----------------------------------------------
 
 
-|滚动隐藏和显示导航栏和底部工具栏|滚动改变状态栏前景和背景颜色,改变导航栏背景颜色|
-|------------------------- |--------------------------------------|
-| <img src="https://github.com/andyysea/StatusBarAndNavgationBar/blob/master/one.gif" width=200 height=360 /> | <img src="https://github.com/andyysea/StatusBarAndNavgationBar/blob/master/two.gif" width=200 height=360 /> |
+|样式|滚动隐藏和显示导航栏和底部工具栏|滚动改变状态栏前景和背景颜色,改变导航栏背景颜色|自定义导航条|
+|---|------------------------- |--------------------------------------|----------|
+|显示样式| <img src="https://github.com/andyysea/StatusBarAndNavgationBar/blob/master/GIF/one.gif" width=200 height=360 /> | <img src="https://github.com/andyysea/StatusBarAndNavgationBar/blob/master/GIF/two.gif" width=200 height=360 /> | <img src="https://github.com/andyysea/StatusBarAndNavgationBar/blob/master/GIF/four.gif">
 
 
 <br/>

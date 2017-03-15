@@ -25,3 +25,57 @@ Three 文件夹
 6> 主要是对文件夹Two 中的功能做了一定的封装,可能也存在问题
 
 
+Four 文件夹
+一 自定义导航条
+    1> 首先重写一个子类文件,继承自 UINavigationController 并且在视图加载完成的时候执行    self.navigationBar.hidden = YES;
+
+    2> 定义一个基类控制器继承 UIViewController,
+然后在这个控制器中添加一个导航条, 并且将导航条作为全局属性
+UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+[self.view addSubview:navBar];
+navBar.barTintColor = [UIColor orangeColor];
+navBar.tintColor = [UIColor whiteColor];
+_navgationBar = navBar;
+如果要在这个导航条上面添加一个一个公共的返回按钮,那就在这个基类里面的添加的导航条左侧添加一个按钮即可
+UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 15, 24, 40)];
+[backButton setTitle:@"返回" forState:UIControlStateNormal];
+[backButton sizeToFit];
+[backButton addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+[backButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+[self.navgationBar addSubview:backButton];
+
+- (void)backClick {
+[self.navigationController popViewControllerAnimated:YES];
+}
+
+    3> 其他控制器只需要继承这个基类控制器即可,
+A) 如果某个控制器中需要使用系统的导航条,
+那么我们只需要在这个控制器中做处理即可,隐藏自定义的导航条,显示系统导航控制器自己的导航条
+(但是这种情况下一般会产生问题,当边缘拖拽返回时,导航条显示与隐藏的问题)
+解决办法:  不使用系统导航条,再重新自定义一个基类控制器,基类控制器中添加新的自定义导航条,需要这种导航条的控制器只需要继承即可
+
+    4>好处 根据OC的三大特性中的继承和多态, 只要在基类控制器中左侧添加一个返回箭头按钮,并且实现功能,中间添加一个label标签作为 Title ,在各个子类控制器中设置的导航条的背景颜色 和 Title 互不影响,,,,
+如果其他子类控制器需要其他样式的导航条,可以再在相应的子类控制器文件中添加即可,如果这种样式用的多可以重新写一个基类控制器,自定义对应样式的导航条
+
+    5> 特别说明
+[self.navigationController setNavigationBarHidden:YES animated:YES];
+self.navigationController.navigationBarHidden = YES;
+self.navigationController.navigationBar.hidden = YES;
+以上三种方法,当工程中存在UITabBarController的时候,只有第三种方式设置隐藏系统导航条支持拖拽返回手势,其他两种方法不支持
+
+二 不自定义导航条,直接使用系统导航条,导航条隐藏方法与左侧拖拽返回的关系
+[self.navigationController setNavigationBarHidden:NO animated:YES];
+self.navigationController.navigationBarHidden = NO;
+self.navigationController.navigationBar.hidden = NO;
+    1> 前两种方法隐藏导航条的时候, 只有 在当前控制器没有隐藏导航条,不管上一级控制器隐藏与否,都支持当前控制器的左侧拖拽返回.
+    2> 第三种方式不管上一级控制器或者还是当前控制器是否隐藏导航条,都支持左侧拖拽返回
+    3> 第一种和后两种的区别是, 如果上一级控制器隐藏了导航条,当前控制器没有隐藏导航条,左侧拖拽返回的时候,第一种方法不会产生刚一拖动导航条就向上消失的情况,
+    4> 以上三种方法在测试的时候,当当前系统导航栏没有隐藏的情况下,只要设置了self.navigationItem.leftBarButtonItem , 左侧拖拽返回功能就没有了
+    5> 特别说明,  当不定义导航条,使用系统的导航条的时候, 如果存在UITabBarController 也遵守以上四条
+
+
+
+
+
+
+

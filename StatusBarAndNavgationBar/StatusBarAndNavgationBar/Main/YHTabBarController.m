@@ -13,6 +13,11 @@
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
 
+// Four 文件夹
+#import "FourNavigationController.h"
+#import "FourOneViewController.h"
+
+
 @interface YHTabBarController ()
 
 @end
@@ -40,7 +45,11 @@
     threeVC.title = @"Three";
     YHNavgationController *threeNav = [[YHNavgationController alloc] initWithRootViewController:threeVC];
     
-    self.viewControllers = @[oneNav,twoNav, threeNav];
+    FourOneViewController *fourVC = [FourOneViewController new];
+    fourVC.title = @"four";
+    FourNavigationController *fourNav = [[FourNavigationController alloc] initWithRootViewController:fourVC];
+    
+    self.viewControllers = @[oneNav,twoNav, threeNav, fourNav];
     
 }
 

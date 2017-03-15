@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E88330A1E78F16600A01930 /* FourNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8833091E78F16600A01930 /* FourNavigationController.m */; };
+		7E88330D1E78F17D00A01930 /* OneBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88330C1E78F17D00A01930 /* OneBaseViewController.m */; };
+		7E8833101E78F18800A01930 /* TwoBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88330F1E78F18800A01930 /* TwoBaseViewController.m */; };
+		7E88335B1E79274200A01930 /* FourOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88335A1E79274200A01930 /* FourOneViewController.m */; };
+		7E88335E1E79275700A01930 /* FourTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88335D1E79275700A01930 /* FourTwoViewController.m */; };
+		7E8833611E79276200A01930 /* FourThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8833601E79276200A01930 /* FourThreeViewController.m */; };
 		7EE2F4AE1E6FA0940064D8DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE2F4AD1E6FA0940064D8DC /* main.m */; };
 		7EE2F4B11E6FA0940064D8DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE2F4B01E6FA0940064D8DC /* AppDelegate.m */; };
 		7EE2F4B91E6FA0940064D8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EE2F4B81E6FA0940064D8DC /* Assets.xcassets */; };
@@ -36,6 +42,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E8833081E78F16600A01930 /* FourNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourNavigationController.h; sourceTree = "<group>"; };
+		7E8833091E78F16600A01930 /* FourNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourNavigationController.m; sourceTree = "<group>"; };
+		7E88330B1E78F17D00A01930 /* OneBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneBaseViewController.h; sourceTree = "<group>"; };
+		7E88330C1E78F17D00A01930 /* OneBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneBaseViewController.m; sourceTree = "<group>"; };
+		7E88330E1E78F18800A01930 /* TwoBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoBaseViewController.h; sourceTree = "<group>"; };
+		7E88330F1E78F18800A01930 /* TwoBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoBaseViewController.m; sourceTree = "<group>"; };
+		7E8833591E79274200A01930 /* FourOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourOneViewController.h; sourceTree = "<group>"; };
+		7E88335A1E79274200A01930 /* FourOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourOneViewController.m; sourceTree = "<group>"; };
+		7E88335C1E79275700A01930 /* FourTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourTwoViewController.h; sourceTree = "<group>"; };
+		7E88335D1E79275700A01930 /* FourTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourTwoViewController.m; sourceTree = "<group>"; };
+		7E88335F1E79276200A01930 /* FourThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourThreeViewController.h; sourceTree = "<group>"; };
+		7E8833601E79276200A01930 /* FourThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourThreeViewController.m; sourceTree = "<group>"; };
 		7EE2F4A91E6FA0940064D8DC /* StatusBarAndNavgationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusBarAndNavgationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE2F4AD1E6FA0940064D8DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EE2F4AF1E6FA0940064D8DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +105,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E8833071E78F13900A01930 /* Four */ = {
+			isa = PBXGroup;
+			children = (
+				7E8833111E78F18E00A01930 /* base */,
+				7E8833121E78F19D00A01930 /* other */,
+			);
+			path = Four;
+			sourceTree = "<group>";
+		};
+		7E8833111E78F18E00A01930 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				7E8833081E78F16600A01930 /* FourNavigationController.h */,
+				7E8833091E78F16600A01930 /* FourNavigationController.m */,
+				7E88330B1E78F17D00A01930 /* OneBaseViewController.h */,
+				7E88330C1E78F17D00A01930 /* OneBaseViewController.m */,
+				7E88330E1E78F18800A01930 /* TwoBaseViewController.h */,
+				7E88330F1E78F18800A01930 /* TwoBaseViewController.m */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		7E8833121E78F19D00A01930 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				7E8833591E79274200A01930 /* FourOneViewController.h */,
+				7E88335A1E79274200A01930 /* FourOneViewController.m */,
+				7E88335C1E79275700A01930 /* FourTwoViewController.h */,
+				7E88335D1E79275700A01930 /* FourTwoViewController.m */,
+				7E88335F1E79276200A01930 /* FourThreeViewController.h */,
+				7E8833601E79276200A01930 /* FourThreeViewController.m */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
 		7EE2F4A01E6FA0940064D8DC = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +212,7 @@
 				7EE2F4F01E7006DE0064D8DC /* One */,
 				7EE2F4F71E700BA30064D8DC /* Two */,
 				7EE2F5051E7107B50064D8DC /* Three */,
+				7E8833071E78F13900A01930 /* Four */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -305,11 +359,17 @@
 				7EE2F50B1E71083C0064D8DC /* UINavigationBar+YYH.m in Sources */,
 				7EE2F5041E7105420064D8DC /* TwoOtherViewController.m in Sources */,
 				7EE2F4DB1E6FA3B70064D8DC /* YHBaseViewController.m in Sources */,
+				7E88330A1E78F16600A01930 /* FourNavigationController.m in Sources */,
+				7E8833101E78F18800A01930 /* TwoBaseViewController.m in Sources */,
+				7E88330D1E78F17D00A01930 /* OneBaseViewController.m in Sources */,
+				7E88335B1E79274200A01930 /* FourOneViewController.m in Sources */,
 				7EE2F4F51E7006DE0064D8DC /* OneViewController.m in Sources */,
 				7EE2F4D71E6FA3610064D8DC /* YHNavgationController.m in Sources */,
 				7EE2F4F61E7006DE0064D8DC /* OtherViewController.m in Sources */,
+				7E8833611E79276200A01930 /* FourThreeViewController.m in Sources */,
 				7EE2F4AE1E6FA0940064D8DC /* main.m in Sources */,
 				7EE2F4FD1E700BFF0064D8DC /* TwoViewController.m in Sources */,
+				7E88335E1E79275700A01930 /* FourTwoViewController.m in Sources */,
 				7EE2F5081E7107DC0064D8DC /* ThreeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
