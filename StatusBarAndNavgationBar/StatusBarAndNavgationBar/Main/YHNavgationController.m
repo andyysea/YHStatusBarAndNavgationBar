@@ -8,7 +8,7 @@
 
 #import "YHNavgationController.h"
 
-@interface YHNavgationController ()
+@interface YHNavgationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -16,7 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+ 
+    self.interactivePopGestureRecognizer.delegate = self;
+}
+
+/******** 如果不是自定义的导航栏,直接使用导航控制器的 leftBarButtonItem 改成统一的返回箭头按钮,则会导致左侧边缘拖拽不能反回
+ 
+ 解决办法:
+    1> 导航控制器设置交互pop手势的代理
+         self.interactivePopGestureRecognizer.delegate = self;
+    2> 遵守协议
+        <UIGestureRecognizerDelegate>
+    3> 实现协议方法
+ - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.viewControllers.count > 1) {
+        return YES;
+    }
+    return NO;
+ }
+ 
+ ************/
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (self.viewControllers.count > 1) {
+        return YES;
+    }
+    return NO;
 }
 
 
